@@ -1,0 +1,120 @@
+scripts:
+  c:
+    start:
+      trigger:
+        type: method
+        value: CamManager.checkWelcomeNotSent
+      message: Добро пожаловать. Нажмите на кнопку.
+      keyboard_name: main
+    buttons:
+      trigger:
+        type: regexp
+        value:
+          - ^/start$
+          - ^Кнопки$
+          - ^Помощь$
+          - ^Привет$
+          - ^Команды$
+          - ^В начало$
+      message: Нажмите на кнопку
+      keyboard_name: main
+      command: true
+    refill:
+      trigger:
+        type: text
+        value: Пополнение
+      message: Нажмите на кнопку, чтобы пополнить баланс на несколько убитых енотов
+      command: true
+      store: true
+      keyboard:
+        buttons:
+          - Хочу 5 енотов
+          - Хочу 10 енотов
+          - Хочу -20 енотов
+          - В начало
+        options:
+          - simple
+          #      - oneTime
+          - resize
+          - extra
+      validate:
+        validator:
+        validator-params:
+        success:
+          goto: c.refill.c
+      c:
+        5ye:
+          trigger:
+            type: text
+            value:
+              - Хочу 5 енотов
+          message: Готово, баланс увеличен на 5 енотов. Возвращаем в главное меню.
+          action:
+            type: method
+            value: CamManager.refill5
+          goto: c.buttons
+        10ye:
+          trigger:
+            type: text
+            value:
+              - Хочу 10 енотов
+          message: Готово, баланс увеличен на 10 енотов. Возвращаем в главное меню.
+          action:
+            type: method
+            value: CamManager.refill10
+          goto: c.buttons
+        neg5ye:
+          trigger:
+            type: text
+            value:
+              - Хочу -20 енотов
+          message: Готово, баланс уменьшен на 20 енотов. Возвращаем в главное меню.
+          action:
+            type: method
+            value: CamManager.refillNeg20
+          goto: c.buttons
+    promotion:
+      trigger:
+        type: text
+        value: Продвижение
+      message: Введите полную ссылку на комнату для продвижения
+      command: true
+      store: true
+      validate:
+        validator:
+        validator-params:
+        success:
+          goto: c.promotion.c.done
+      c:
+        done:
+          message: Продвижение началось. Ожидайте нашествия темно-фиолетовых.
+          action:
+            type: method
+            value: cmCntrl.promoBegin
+    status:
+      trigger:
+        type: text
+        value: Статус
+      message: ---
+      command: true
+      store: false
+
+
+
+
+
+
+
+
+
+keyboards:
+  main:
+    buttons:
+      - Пополнение
+      - Продвижение
+      - Статус
+    options:
+      - simple
+#      - oneTime
+      - resize
+      - extra

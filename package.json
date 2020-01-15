@@ -1,0 +1,24 @@
+{
+  "name": "cammanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botcms": "git+https://github.com/mvoevodskiy/BotCMS.git",
+    "botcms-handler": "git+https://github.com/mvoevodskiy/botcms-handler.git",
+    "child_process": "^1.0.2",
+    "dotenv": "^8.2.0",
+    "express-handler": "git+https://github.com/mvoevodskiy/express-handler.git",
+    "fs": "0.0.1-security",
+    "js-yaml": "^3.13.1",
+    "mvloader": "git+https://github.com/mvoevodskiy/mvloader.git",
+    "mvtools": "git+https://github.com/mvoevodskiy/mvtools.git",
+    "typeorm": "^0.2.21"
+  }
+}

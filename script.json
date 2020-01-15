@@ -1,0 +1,83 @@
+[
+  {
+    "id": 10,
+    "method": "launch",
+    "service": ""
+  },
+  {
+    "id": 11,
+    "method": "go",
+    "options": "https://ya.ru"
+  },
+  {
+    "id": 12,
+    "method": "restoreState"
+  },
+  {
+    "id": 13,
+    "method": "sleep",
+    "options": 3000
+  },
+  {
+    "id": 16,
+    "method": "screenshot",
+    "options": {}
+  },
+  {
+    "id": 17,
+    "method": "getRandomPage",
+    "options": {}
+  },
+  {
+    "id": 18,
+    "method": "sleep",
+    "options": 4000
+  },
+  {
+    "id": 19,
+    "method": "screenshot",
+    "options": {}
+  },
+  {
+    "id": 101,
+    "method": "auth",
+    "options": {
+      "username": "username",
+      "password": "password"
+    }
+  },
+  {
+    "id": 111,
+    "method": "sleep",
+    "options": 3000
+  },
+  {
+    "id": 151,
+    "method": "screenshot",
+    "service": ""
+  },
+  {
+    "id": 161,
+    "method": "sleep",
+    "options": 3000
+  },
+  {
+    "id": 171,
+    "method": "go",
+    "options": "https://vk.com"
+  },
+  {
+    "id": 181,
+    "method": "sleep",
+    "options": 10000
+  },
+  {
+    "id": 191,
+    "method": "screenshot",
+    "service": ""
+  },
+  {
+    "id": 251,
+    "method": "quit"
+  }
+]
