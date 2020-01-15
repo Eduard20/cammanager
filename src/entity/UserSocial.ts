@@ -33,6 +33,9 @@ export class UserSocial {
     @Column()
     createdon: "int";
 
+    @Column()
+    balance: "int"
+
     // @Column({
     //     default: '{}',
     //     transformer: {

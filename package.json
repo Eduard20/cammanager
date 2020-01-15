@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "child_process": "^1.0.2",
     "dotenv": "^8.2.0",
     "express-handler": "git+https://github.com/mvoevodskiy/express-handler.git",
+    "db-handler": "git+https://github.com/mvoevodskiy/db-handler.git",
     "fs": "0.0.1-security",
     "js-yaml": "^3.13.1",
     "mvloader": "git+https://github.com/mvoevodskiy/mvloader.git",
