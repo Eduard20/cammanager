@@ -51,7 +51,7 @@ scripts:
           message: Готово, баланс увеличен на 5 енотов. Возвращаем в главное меню.
           action:
             type: method
-            value: CamManager.refill5
+            value: cmCntrl.refill5
           goto: c.buttons
         10ye:
           trigger:
@@ -61,7 +61,7 @@ scripts:
           message: Готово, баланс увеличен на 10 енотов. Возвращаем в главное меню.
           action:
             type: method
-            value: CamManager.refill10
+            value: cmCntrl.refill10
           goto: c.buttons
         neg5ye:
           trigger:
@@ -71,7 +71,7 @@ scripts:
           message: Готово, баланс уменьшен на 20 енотов. Возвращаем в главное меню.
           action:
             type: method
-            value: CamManager.refillNeg20
+            value: cmCntrl.refillNeg20
           goto: c.buttons
     promotion:
       trigger:
