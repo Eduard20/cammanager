@@ -14,13 +14,13 @@
     "botcms": "git+https://github.com/mvoevodskiy/BotCMS.git",
     "botcms-handler": "git+https://github.com/mvoevodskiy/botcms-handler.git",
     "child_process": "^1.0.2",
+    "db-handler": "git+https://github.com/mvoevodskiy/db-handler.git",
     "dotenv": "^8.2.0",
     "express-handler": "git+https://github.com/mvoevodskiy/express-handler.git",
-    "db-handler": "git+https://github.com/mvoevodskiy/db-handler.git",
     "fs": "0.0.1-security",
     "js-yaml": "^3.13.1",
     "mvloader": "git+https://github.com/mvoevodskiy/mvloader.git",
     "mvtools": "git+https://github.com/mvoevodskiy/mvtools.git",
-    "typeorm": "^0.2.21"
+    "typeorm": "^0.2.22"
   }
 }

@@ -53,6 +53,10 @@ var UserSocial = /** @class */ (function () {
         typeorm_1.Column(),
         __metadata("design:type", String)
     ], UserSocial.prototype, "createdon");
+    __decorate([
+        typeorm_1.Column(),
+        __metadata("design:type", Number)
+    ], UserSocial.prototype, "balance");
     UserSocial = __decorate([
         typeorm_1.Entity()
     ], UserSocial);

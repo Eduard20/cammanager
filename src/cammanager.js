@@ -18,9 +18,9 @@ class CamManager extends MVLoader {
                     CamManagerController: CamManagerController
                 },
                 handlers: {
-                    BotHandler: BotHandler,
-                    DBHandler: DBHandler,
-                    ExpressHandler: ExpressHandler
+                    BotHandler,
+                    DBHandler,
+                    ExpressHandler
                 }
             },
         };

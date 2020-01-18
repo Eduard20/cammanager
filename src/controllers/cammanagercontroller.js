@@ -1,3 +1,4 @@
+
 /**
  * @class CammanagerController
  *
@@ -12,10 +13,20 @@ class CammanagerController {
     constructor(App) {
         this.App = App;
         this.MT = this.App.MT;
-
         this.test = (ctx) => {
             console.log('CAM MANAGER BOT TEST METHOD');
             return ctx.Message.text === '+++';
+        };
+
+        this.tmplUser = {
+            username: 'test',
+            full_name: 'test',
+            tech_name: 'test',
+            last_name: 'test',
+            bridge: 'test',
+            driver: 'test',
+            type: 'test',
+            createdon: Date.now()
         };
 
         this.promoBegin = async (ctx) => {
@@ -41,17 +52,11 @@ class CammanagerController {
 
         this.refill5 = async (ctx) => {
             let tmpArray = this.MT.extract('answers.refill', ctx.session);
-            console.log(tmpArray);
             if (!this.MT.empty(tmpArray)) {
                 ( async () => {
                     let elem = tmpArray[tmpArray.length - 1];
                     console.log('URL: ', elem.answer);
-
-                    // await getConnection
-                    //   .createQueryBuilder()
-                    //   .update(UserSocial)
-                    //   .set({balance: () => "'balance' + 5"})
-                    //   .execute();
+                    await this.refillFunction(ctx.Message._sender.id, 5);
                 })();
 
             }
@@ -65,13 +70,8 @@ class CammanagerController {
                     let elem = tmpArray[tmpArray.length - 1];
                     console.log('URL: ', elem.answer);
 
-                    // await getConnection
-                    //   .createQueryBuilder()
-                    //   .update(UserSocial)
-                    //   .set({balance: () => "'balance' + 10"})
-                    //   .execute();
+                    await this.refillFunction(ctx.Message._sender.id, 10);
                 })();
-
             }
         };
 
@@ -83,13 +83,24 @@ class CammanagerController {
                     let elem = tmpArray[tmpArray.length - 1];
                     console.log('URL: ', elem.answer);
 
-                    // await getConnection
-                    //   .createQueryBuilder()
-                    //   .update(UserSocial)
-                    //   .set({balance: () => "'balance' - 20"})
-                    //   .execute();
+                    await this.refillFunction(ctx.Message._sender.id, -20);
                 })();
 
+            }
+        };
+
+        this.refillFunction = async(id , amount) => {
+            const userSocial = this.App.DB.getRepository('UserSocial');
+            const user = await userSocial.findOne({tg_id: id});
+            if (user) {
+                user.balance+=amount;
+                await userSocial.save(user);
+            } else {
+                await userSocial.save({
+                    tg_id: id,
+                    balance: amount,
+                    ...this.tmplUser
+                })
             }
         };
 
