@@ -21,6 +21,6 @@
     "js-yaml": "^3.13.1",
     "mvloader": "git+https://github.com/mvoevodskiy/mvloader.git",
     "mvtools": "git+https://github.com/mvoevodskiy/mvtools.git",
-    "typeorm": "^0.2.22"
+    "typeorm": "^0.2.25"
   }
 }
